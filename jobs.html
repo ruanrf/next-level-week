@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffy | Jobs</title>
+    
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/partials/page-jobs.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+    
+</head>
+<body id="page-jobs">
+
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="./index.html">
+                    <img src="./images/icons/back.svg" alt="Return">
+                </a>
+                <a href="./index.html">
+                    <img src="./images/logo.svg" alt="Proffy Logo">
+                </a>
+            </div>
+        
+            <div class="header-content">
+                <strong>These are our available vacancies:</strong>
+                <form id="search-jobs">
+                    <div class="select-block">
+                        <label for="job-area">Area</label>
+                        <select name="major-area" id="area">
+                            <!-- Trocar areas por local da vaga (cidade estado país) -->
+                            <option value="" disabled="" hidden="">Select an option</option>
+                            <option value="1">Front-end</option>
+                            <option value="2">Back-end</option>
+                            <option value="3">Full-stack</option>
+                            <option value="4">QA and Testing</option>
+                            <option value="5">Mobile (Android)</option>
+                            <option value="6">Mobile (iOS)</option>
+                            <option value="7">Design</option>
+                            <option value="8">UX</option>
+                            <option value="9">Product Owner</option>
+                            <option value="10">Business</option>
+                            <option value="11">Others</option>
+                        </select>
+                    </div>
+                    <div class="select-block">
+                        <label for="job-level">Job Level</label>
+                        <select name="position-level" id="area">
+                            <option value="" disabled="" hidden="">Job position</option>
+                            <option value="1" />Intern</option>
+                            <option value="2">Junior</option>
+                            <option value="3">Middle</option>
+                            <option value="4">Senior</option>
+                            <option value="5">Trainee</option>
+                            <option value="6">Lead</option>
+                            <option value="7">CTO</option>
+                            <option value="8">Diirector</option>
+                            <option value="9">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="activity">Activity</label>
+                        <input name="mode" id="mode" type="text" />
+                    </div>
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+        </header> 
+        
+        <main>
+            <article class="vacancy-item">
+                <header>
+                    <img 
+                        src="./images/icons/jobs/itau.svg" 
+                        alt="Itaú Unibanco">
+                    <div>
+                        <strong>Itau Unibanco</strong>
+                        <span>Sao Paulo - Brazil</span>
+                    </div>
+                </header>
+            
+                <p>Absque sudore et labore nullum opus perfectum est.</p>
+                <p>This is the request.</p>
+            
+                <footer>
+                    <p>Pay/month<strong>R$4.600 + benefits</strong>
+                    </p>
+                    <button type="button">
+                        <img src="./images/icons/jobs/apply.png" alt="Apply">Apply now!
+                    </button>
+                </footer>
+            </article>
+            <article class="vacancy-item">
+                <header>
+                    <img 
+                        src="https://dic.nicovideo.jp/oekaki/34322.png" 
+                        alt="日本カンパニーリミテッド">
+                    <div>
+                        <strong>日本カンパニーリミテッド</strong>
+                        <span>Nagoya - Japan</span>
+                    </div>
+                </header>
+            
+                <p>Absque sudore et labore nullum opus perfectum est.</p>
+                <p>This is the request.</p>
+            
+                <footer>
+                    <p>Pay/month<strong>円　百万六万 (1．600．000)</strong>
+                    </p>
+                    <button type="button">
+                        <img src="./images/icons/jobs/apply.png" alt="Apply">Apply now!
+                    </button>
+                </footer>
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>
+ 
