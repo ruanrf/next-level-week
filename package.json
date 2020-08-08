@@ -1,0 +1,24 @@
+{
+  "name": "nlw-proffy",
+  "version": "1.0.0",
+  "description": "Developed during the \"Next Level Week #2\", immersion created by Rocketseat",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanrf/nlw-proffy.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruanrf/nlw-proffy/issues"
+  },
+  "homepage": "https://github.com/ruanrf/nlw-proffy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
