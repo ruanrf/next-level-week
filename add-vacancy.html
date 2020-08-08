@@ -16,6 +16,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     
+    <script src="./scripts/addField.js" defer></script>
+
 </head>
 <body id="page-add-vacancy">
 
@@ -31,36 +33,37 @@
             </div>
         
             <div class="header-content">
-                <strong>Absque sudore et labore</strong>
-                <p>nullum opus perfectum est</p>
+                <strong>It is great to know that you are hiring.</strong>
+                <p>To post a new job offer, we need you to fill in all the fields below.</p>
                 
             </div>
         </header> 
         
         <main>
             <form action="" id="create-vacancy">
+              
                 <!-- Company Information -->
                 <fieldset>
                     <legend>Company Information</legend>
 
                     <div class="input-block">
                         <label for="company">Company Name</label>
-                        <input name="company" id="company" type="text" required />
+                        <input name="company" id="company" required>
                     </div>
 
                     <div class="input-block">
                         <label for="logo">Company Logo URL <small>(use https://)</small></label>
-                        <input type="logo" id="logo" type="url" required />
+                        <input type="logo" id="logo" type="url" required>
                     </div>
 
                     <div class="input-block">
                         <label for="contact">Company e-mail <small>(preference: HR)</small></label>
-                        <input name="contact" id="contact" type="email" required />
+                        <input name="contact" id="contact" type="email" required>
                     </div>
                     
                     <div class="textarea-block">
                         <label for="description">Company Description</label>
-                        <textarea name="description" id="description" cols="2" required></textarea>
+                        <textarea name="description" id="description" required /></textarea>
                     </div>
                     <!-- to-do: add [salary, location, remote/office/hybrid flag] -->
 
@@ -70,9 +73,9 @@
                 <fieldset>
                     <legend>About the job</legend>  
                     <div class="select-block">
-                        <label for="job-area">Job area <small>(use "Others" if not found)</small></label>
+                        <label for="job-area">Job Position <small>(select "Others" if not found)</small></label>
                         <select name="job-area" id="job-area" required>
-                            <option value="" disabled="" hidden="">Choose an option</option>
+                            <option value="" hidden="">Area</option>
                             <option value="1">Front-end</option>
                             <option value="2">Back-end</option>
                             <option value="3">Full-stack</option>
@@ -86,11 +89,27 @@
                             <option value="11">Others</option>
                         </select>
                     </div>  
+                    
+                    <div class="select-block">
+                        <label for="job-position">Job Position <small>(select "Others" if not found)</small></label>
+                        <select name="job-position" id="job-position" required>
+                            <option value="" hidden="">Position</option>
+                            <option value="1" />Intern</option>
+                            <option value="2">Junior</option>
+                            <option value="3">Middle</option>
+                            <option value="4">Senior</option>
+                            <option value="5">Trainee</option>
+                            <option value="6">Lead</option>
+                            <option value="7">CTO</option>
+                            <option value="8">Director</option>
+                            <option value="9">Others</option>
+                        </select>
+                    </div>  
 
                     <div class="select-block">
                         <label for="job-mode">Job Mode</label>
                         <select name="job-mode" id="job-mode" required>
-                            <option value="" disabled="" hidden="">Choose an option</option>
+                            <option value="" hidden="">Mode</option>
                             <option value="1">Office-only</option>
                             <option value="2">Remote-only</option>
                             <option value="3">Hybrid</option>       
@@ -99,7 +118,7 @@
 
                     <div class="input-block">
                         <label for="sallary">Monthly Payment <small>(US$)</small></label>
-                        <input name="sallary" id="sallary" type="number" />
+                        <input name="sallary" id="sallary" type="number" required>
                     </div>
                     
                 </fieldset>
@@ -107,7 +126,7 @@
                 <!-- Job location -->
                 <fieldset id="location-items">
                     <legend>Job location
-                        <button id="add-location">+add another location</button>
+                        <button type="button" id="add-location">+ add another location</button>
                     </legend>
 
                     <div class="location-item">
@@ -115,7 +134,7 @@
                         <div class="select-block">
                             <label for="region">Region</label>
                             <select name="region[]" required>
-                                <option value="" disabled="" hidden="">Choose an option</option>
+                                <option value="" hidden="">Region</option>
                                 <option value="1">Europe</option>
                                 <option value="2">North America</option>
                                 <option value="3">South America</option>
@@ -138,34 +157,6 @@
 
                     </div>
 
-                    <!-- Duplicata do location-item -->
-                    <div class="location-item">
-
-                        <div class="select-block">
-                            <label for="region">Region</label>
-                            <select name="region[]" required>
-                                <option value="" disabled="" hidden="">Choose an option</option>
-                                <option value="1">Europe</option>
-                                <option value="2">North America</option>
-                                <option value="3">South America</option>
-                                <option value="4">Oceania</option>
-                                <option value="5">Asia</option>
-                                <option value="6">Africa</option>
-                                <option value="7">N/A</option>                       
-                            </select>
-                        </div>
-
-                        <div class="input-block">
-                            <label for="country">Country</label>
-                            <input type="text" name="country[]" required>
-                        </div>
-
-                        <div class="input-block">
-                            <label for="city">City</label>
-                            <input type="text" name="city[]" required>
-                        </div>
-
-                    </div>
                 </fieldset>
             </form>
 
