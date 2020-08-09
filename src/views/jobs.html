@@ -31,47 +31,51 @@
             </div>
         
             <div class="header-content">
-                <strong>These are our available vacancies:</strong>
+                <strong>These are our available jobs:</strong>
                 <form id="search-jobs">
                     <div class="select-block">
-                        <label for="job-area">Area</label>
-                        <select name="major-area" id="area">
-                           
-                            <!-- to do: 
-                            add more options to search 
-                            select multiple areas -->
-                            <option value="" hidden="">Area</option>
-                            <option value="1">Front-end</option>
-                            <option value="2">Back-end</option>
-                            <option value="3">Full-stack</option>
-                            <option value="4">QA and Testing</option>
-                            <option value="5">Mobile (Android)</option>
-                            <option value="6">Mobile (iOS)</option>
-                            <option value="7">Design</option>
-                            <option value="8">UX</option>
-                            <option value="9">Product Owner</option>
-                            <option value="10">Business</option>
-                            <option value="11">Others</option>
+                        <label for="area">Area</label>
+                        <select name="area" id="area">
+                            
+                        <!-- 
+                            to do: 
+                            [ ] add more options to search 
+                            [ ] select multiple areas -> is this viable?
+                        -->
+                            <option value="" hidden="" />
+                            {%for area in jobArea%}
+                                <option value="{{loop.index}}" {{ "selected" if filters.area == loop.index }}>
+                                    {{area}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>
                     <div class="select-block">
-                        <label for="job-level">Job Position</label>
-                        <select name="position-level" id="area">
-                            <option value="" hidden="">Position</option>
-                            <option value="1" />Intern</option>
-                            <option value="2">Junior</option>
-                            <option value="3">Middle</option>
-                            <option value="4">Senior</option>
-                            <option value="5">Trainee</option>
-                            <option value="6">Lead</option>
-                            <option value="7">CTO</option>
-                            <option value="8">Director</option>
-                            <option value="9">Others</option>
+                        <label for="position">Job Position</label>
+                        <select name="position" id="position">
+
+                            <option value="" hidden="" />
+                            {%for position in jobPosition%}
+                                <option value="{{loop.index}}" {{ "selected" if filters.position == loop.index }}>
+                                    {{position}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>
-                    <div class="input-block">
-                        <label for="location">Location</label>
-                        <input name="mode" id="mode" type="text" />
+                    <div class="select-block">
+                        <label for="region">Location</label>
+                        <select name="region" id="region">
+
+                            <option value="" hidden="" />
+                            {%for region in jobRegion%}
+                                <option value="{{loop.index}}" {{ "selected" if filters.region == loop.index }}>
+                                    {{region}}
+                                </option>
+                            {%endfor%}
+
+                        </select>
                     </div>
                     <button type="submit">Filter</button>
                 </form>
@@ -79,50 +83,34 @@
         </header> 
         
         <main>
-            <article class="vacancy-item">
-                <header>
-                    <img 
-                        src="/images/icons/jobs/itau.svg" 
-                        alt="Itaú Unibanco">
-                    <div>
-                        <strong>Itau Unibanco</strong>
-                        <span>Sao Paulo - Brazil</span>
+            
+            {%for job in vacancies %}
+                <article class="vacancy-item">
+                    <header>
+                        <img 
+                            src="{{job.logo}}" 
+                            alt="{{job.company}}">
+                        <div>
+                            <strong>{{job.company}} - {{job.position}} {{job.area}}</strong>
+                            <span>{{job.city}} - {{job.country}}</span>
+                        </div>
+                    </header>
+                    <div class="description">
+                        <p>{{job.description}}</p>
+                        <p>{{job.mode}}</p>
                     </div>
-                </header>
+                
+                    <footer>
+                        <p>Pay/month <strong>{{job.salary}}</strong> <small> US$</small>
+                        </p>
+                        <a href="mailto:{{job.contact}}?subject=Application to {{job.position}} {{job.area}} Position&body=Important! Do not forget to attach your resume and introduce yourself!" 
+                        class="button" target="_blank">
+                            <img src="/images/icons/jobs/apply.png" alt="Apply">Apply now!
+                        </a>
+                    </footer>
+                </article>
+            {%endfor%}
             
-                <p>Absque sudore et labore nullum opus perfectum est.</p>
-                <p>This is the request.</p>
-            
-                <footer>
-                    <p>Pay/month<strong>R$4.600 + benefits</strong>
-                    </p>
-                    <button type="button">
-                        <img src="/images/icons/jobs/apply.png" alt="Apply">Apply now!
-                    </button>
-                </footer>
-            </article>
-            <article class="vacancy-item">
-                <header>
-                    <img 
-                        src="https://dic.nicovideo.jp/oekaki/34322.png" 
-                        alt="日本カンパニーリミテッド">
-                    <div>
-                        <strong>日本カンパニーリミテッド</strong>
-                        <span>Nagoya - Japan</span>
-                    </div>
-                </header>
-            
-                <p>Absque sudore et labore nullum opus perfectum est.</p>
-                <p>This is the request.</p>
-            
-                <footer>
-                    <p>Pay/month<strong>円　百万六万 (1．600．000)</strong>
-                    </p>
-                    <button type="button">
-                        <img src="/images/icons/jobs/apply.png" alt="Apply">Apply now!
-                    </button>
-                </footer>
-            </article>
         </main>
 
     </div>

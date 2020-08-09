@@ -53,19 +53,13 @@
 
                     <div class="input-block">
                         <label for="logo">Company Logo URL <small>(use https://)</small></label>
-                        <input type="logo" id="logo" type="url" required>
+                        <input name="logo" id="logo" type="url" required>
                     </div>
 
                     <div class="input-block">
                         <label for="contact">Company e-mail <small>(preference: HR)</small></label>
                         <input name="contact" id="contact" type="email" required>
                     </div>
-                    
-                    <div class="textarea-block">
-                        <label for="description">Company Description</label>
-                        <textarea name="description" id="description" required /></textarea>
-                    </div>
-                    <!-- to-do: add [salary, location, remote/office/hybrid flag] -->
 
                 </fieldset>
                 
@@ -73,52 +67,55 @@
                 <fieldset>
                     <legend>About the job</legend>  
                     <div class="select-block">
-                        <label for="job-area">Job Position <small>(select "Others" if not found)</small></label>
-                        <select name="job-area" id="job-area" required>
-                            <option value="" hidden="">Area</option>
-                            <option value="1">Front-end</option>
-                            <option value="2">Back-end</option>
-                            <option value="3">Full-stack</option>
-                            <option value="4">QA and Testing</option>
-                            <option value="5">Mobile (Android)</option>
-                            <option value="6">Mobile (iOS)</option>
-                            <option value="7">Design</option>
-                            <option value="8">UX</option>
-                            <option value="9">Product Owner</option>
-                            <option value="10">Business</option>
-                            <option value="11">Others</option>
+                        <label for="area">Job Area <small>(select "Others" if not found)</small></label>
+                        <select name="area" id="area" required>
+
+                            <option value="" hidden="" />
+                            {%for area in jobArea%}
+                                <option value="{{loop.index}}">
+                                    {{area}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>  
                     
                     <div class="select-block">
-                        <label for="job-position">Job Position <small>(select "Others" if not found)</small></label>
-                        <select name="job-position" id="job-position" required>
-                            <option value="" hidden="">Position</option>
-                            <option value="1" />Intern</option>
-                            <option value="2">Junior</option>
-                            <option value="3">Middle</option>
-                            <option value="4">Senior</option>
-                            <option value="5">Trainee</option>
-                            <option value="6">Lead</option>
-                            <option value="7">CTO</option>
-                            <option value="8">Director</option>
-                            <option value="9">Others</option>
+                        <label for="position">Job Position <small>(select "Others" if not found)</small></label>
+                        <select name="position" id="position" required>
+                            
+                            <option value="" hidden="" />
+                            {%for position in jobPosition%}
+                                <option value="{{loop.index}}">
+                                    {{position}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>  
 
                     <div class="select-block">
-                        <label for="job-mode">Job Mode</label>
-                        <select name="job-mode" id="job-mode" required>
-                            <option value="" hidden="">Mode</option>
-                            <option value="1">Office-only</option>
-                            <option value="2">Remote-only</option>
-                            <option value="3">Hybrid</option>       
+                        <label for="mode">Job Mode</label>
+                        <select name="mode" id="mode" required>
+                           
+                            <option value="" hidden="" />
+                            {%for mode in jobMode%}
+                                <option value="{{loop.index}}">
+                                    {{ mode }}
+                                </option>
+                            {%endfor%}  
+
                         </select>
                     </div>
 
                     <div class="input-block">
                         <label for="salary">Monthly Payment <small>(US$)</small></label>
                         <input name="salary" id="salary" type="number" required>
+                    </div>
+                    
+                    <div class="textarea-block">
+                        <label for="description">Company Description</label>
+                        <textarea name="description" id="description" required /></textarea>
                     </div>
                     
                 </fieldset>
@@ -133,26 +130,26 @@
 
                         <div class="select-block">
                             <label for="region">Region</label>
-                            <select name="region[]" required>
-                                <option value="" hidden="">Region</option>
-                                <option value="1">Europe</option>
-                                <option value="2">North America</option>
-                                <option value="3">South America</option>
-                                <option value="4">Oceania</option>
-                                <option value="5">Asia</option>
-                                <option value="6">Africa</option>
-                                <option value="7">N/A</option>                      
+                            <select id="region" name="region[]" required>
+
+                                <option value="" hidden="" />
+                                    {%for region in jobRegion%}
+                                        <option value="{{loop.index}}">
+                                            {{region}}
+                                        </option>
+                                    {%endfor%}           
+
                             </select>
                         </div>
 
                         <div class="input-block">
                             <label for="country">Country</label>
-                            <input type="text" name="country[]" required>
+                            <input type="text" id="country" name="country[]" required>
                         </div>
 
                         <div class="input-block">
                             <label for="city">City</label>
-                            <input type="text" name="city[]" required>
+                            <input type="text" id="city" name="city[]" required>
                         </div>
 
                     </div>
@@ -166,7 +163,7 @@
                     Important! </br>
                     Please fill in all fields before sending!
                 </p>
-                <button type="submit" form="create-class">Post vacancy</button>
+                <button type="submit" form="create-vacancy">Post vacancy</button>
             </footer>
         </main>
 

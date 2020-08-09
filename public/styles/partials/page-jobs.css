@@ -108,7 +108,7 @@
     display: block;
 }
 
-.vacancy-item footer button {
+.vacancy-item footer .button {
     width: 18rem;
     height: 4rem;
     background: var(--color-secondary);
@@ -129,7 +129,7 @@
     margin-left: 1.6rem;
 }
 
-.vacancy-item footer button:hover {
+.vacancy-item footer .button:hover {
     background: var(--color-secondary-dark);
 }
 
@@ -188,6 +188,9 @@
         padding: 0 32px;
     }
 
+    .vacancy-item footer a {
+        text-decoration: none;
+    }
     .vacancy-item footer p strong {
         display: initial;
         margin-left: 16px;
