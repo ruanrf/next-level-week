@@ -13,17 +13,17 @@ function execute(db) {
         CREATE TABLE IF NOT EXISTS job (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             company_id INTEGER,
-            area TEXT,
-            position TEXT,
+            area INTEGER,
+            position INTEGER,
             mode TEXT,
             description TEXT, 
             salary INTEGER
         );
 
-        CREATE TABLE IF NOT EXISTS region (
+        CREATE TABLE IF NOT EXISTS regions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             job_id INTEGER,
-            region TEXT,
+            region INTEGER,
             country TEXT,
             city TEXT
         );
